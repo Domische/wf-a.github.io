@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WF&A</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="geo.css">
+    <link rel="stylesheet" href="premium.css">
+    <link rel="stylesheet" href="premium-weather.css">
+    <meta name="description" content="Прогноз погоды в Москве и регионах сегодня, а также на ближайшие 15 дней. Прогноз скорости ветра, уф излучения, солнечной активности и времени восхода и захода">
+    <meta name="keywords" content="путешествие, туризм, отдых, отпуск, достопримечательность, погода, температура воздуха, уф излучение">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=323b2394-63db-47b1-9562-6e2b034571fa&lang=ru_RU" type="text/javascript">
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+                <div class="top">
+                    <a href="premium-index.html" class="logo">WF&A+</a>
+                    <img src="images/burger-menu.png" alt="" class="menu-burger">
+                    <ul class="menu-list">
+                        <li class="menu-list-item"><a href="premium-index.html" class="menu-list-item-link">Главная</a></li>
+                        <li class="menu-list-item"><a href="premium-weather.html" class="menu-list-item-link">Прогноз погоды + Достопримечательности</a></li>
+                        <li class="menu-list-item"><a href="index.html" class="menu-list-item-link">Free version</a></li>
+                    </ul>
+                </div>
+        </header>
+        <main class="main">
+            <div class="search">
+                <input class="input" type="text" placeholder="Поиск">
+                <img src="images/search-512.webp" alt="" class="search-img">
+            </div>
+            <div class="clear" title="Нажмите перед поиском достопримечательностей нового города"><p class="clear-text">Очистить</p></div>
+            <div class="grid-container">
+                <div class="grid-weather">
+                    <section class="weather">
+                        <div class="container">
+                            <p class="premium-title">Прогноз погоды</p>
+                            <div class="weather-container">
+                                <div class="main-prec"><img src="images/stock-img.png" alt="" class="prec"></div>
+                                <ul class="weather-list">
+                                    <li class="main-location">Локация: <span class="location"></span></li>
+                                    <li class="main-map">Карта: <div class="map"></div></li>
+                                    <li class="main-temp">Температура: <span class="temp"></span></li>
+                                    <li class="main-wind">Ветер: <span class="wind"></span></li>
+                                    <li class="main-suntop">Восход: <span class="suntop"></span></li>
+                                    <li class="main-sunbottom">Заход: <span class="sunbottom"></span></li>
+                                    <li class="main-sunbottom">Влажность: <span class="humidity"></span></li>
+                                    <li class="main-sunbottom">УФ-индекс: <span class="uv-index"></span></li>
+                                    <li class="main-desc">Прогноз: <span class="desc"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="double-graph hours">
+                        <div class="container">
+                            <h2 class="graph-title">Прогноз погоды на 24 часа</h2>
+                            <div class="double-graph-container hours-container">
+                                <ul class="graph-minus-list hours-minus-list">
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                    <li class="graph-minus-item hours-minus-item"><span class="graph-minus-deg hours-minus-deg"></span></li>
+                                </ul>
+                                <ul class="double-graph-list hours-graph-list">
+                                    <li class="double-graph-item hours-graph-item">00:00</li>
+                                    <li class="double-graph-item hours-graph-item">01:00</li>
+                                    <li class="double-graph-item hours-graph-item">02:00</li>
+                                    <li class="double-graph-item hours-graph-item">03:00</li>
+                                    <li class="double-graph-item hours-graph-item">04:00</li>
+                                    <li class="double-graph-item hours-graph-item">05:00</li>
+                                    <li class="double-graph-item hours-graph-item">06:00</li>
+                                    <li class="double-graph-item hours-graph-item">07:00</li>
+                                    <li class="double-graph-item hours-graph-item">08:00</li>
+                                    <li class="double-graph-item hours-graph-item">09:00</li>
+                                    <li class="double-graph-item hours-graph-item">10:00</li>
+                                    <li class="double-graph-item hours-graph-item">11:00</li>
+                                    <li class="double-graph-item hours-graph-item">12:00</li>
+                                    <li class="double-graph-item hours-graph-item">13:00</li>
+                                    <li class="double-graph-item hours-graph-item">14:00</li>
+                                    <li class="double-graph-item hours-graph-item">15:00</li>
+                                    <li class="double-graph-item hours-graph-item">16:00</li>
+                                    <li class="double-graph-item hours-graph-item">17:00</li>
+                                    <li class="double-graph-item hours-graph-item">18:00</li>
+                                    <li class="double-graph-item hours-graph-item">19:00</li>
+                                    <li class="double-graph-item hours-graph-item">20:00</li>
+                                    <li class="double-graph-item hours-graph-item">21:00</li>
+                                    <li class="double-graph-item hours-graph-item">22:00</li>
+                                    <li class="double-graph-item hours-graph-item">23:00</li>
+                                </ul>
+                                <ul class="graph-plus-list hours-plus-list">
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                    <li class="graph-plus-item hours-plus-item"><span class="graph-plus-deg hours-plus-deg"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="uv-graph humidity-graph">
+                        <div class="container">
+                            <div class="uv-graph-container">
+                                <h2 class="uv-title">Прогноз влажности на 24 часа</h2>
+                                <div class="uv-container">
+                                    <ul class="uv-num-list humidity-num-list">
+                                        <li class="uv-num-item humidity-num-item">100%</li>
+                                        <li class="uv-num-item humidity-num-item">90%</li>
+                                        <li class="uv-num-item humidity-num-item">80%</li>
+                                        <li class="uv-num-item humidity-num-item">70%</li>
+                                        <li class="uv-num-item humidity-num-item">60%</li>
+                                        <li class="uv-num-item humidity-num-item">50%</li>
+                                        <li class="uv-num-item humidity-num-item">40%</li>
+                                        <li class="uv-num-item humidity-num-item">30%</li>
+                                        <li class="uv-num-item humidity-num-item">20%</li>
+                                        <li class="uv-num-item humidity-num-item">10%</li>
+                                        <li class="uv-num-item humidity-num-item">0%</li>
+                                    </ul>
+                                    <ul class="uv-line-list uv-line-list-humidity">
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">00:00</p><p class="uv-number-change-text">0</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">01:00</p><p class="uv-number-change-text">1</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">02:00</p><p class="uv-number-change-text">2</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">03:00</p><p class="uv-number-change-text">3</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">04:00</p><p class="uv-number-change-text">4</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">05:00</p><p class="uv-number-change-text">5</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">06:00</p><p class="uv-number-change-text">6</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">07:00</p><p class="uv-number-change-text">7</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">08:00</p><p class="uv-number-change-text">8</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">09:00</p><p class="uv-number-change-text">9</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">10:00</p><p class="uv-number-change-text">10</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">11:00</p><p class="uv-number-change-text">11</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">12:00</p><p class="uv-number-change-text">12</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">13:00</p><p class="uv-number-change-text">13</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">14:00</p><p class="uv-number-change-text">14</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">15:00</p><p class="uv-number-change-text">15</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">16:00</p><p class="uv-number-change-text">16</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">17:00</p><p class="uv-number-change-text">17</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">18:00</p><p class="uv-number-change-text">18</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">19:00</p><p class="uv-number-change-text">19</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">20:00</p><p class="uv-number-change-text">20</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">21:00</p><p class="uv-number-change-text">21</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">22:00</p><p class="uv-number-change-text">22</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                        <li class="uv-line-item uv-line-item-humidity"><p class="uv-number-text">23:00</p><p class="uv-number-change-text">23</p> <p class="uv-graph-text uv-graph-text-humidity"></p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="uv-graph uv-graph-hours">
+                        <div class="container">
+                            <div class="uv-graph-container">
+                                <h2 class="uv-title">Прогноз УФ-индекса на 24 часа</h2>
+                                <div class="uv-container">
+                                    <ul class="uv-num-list uv-num-list-hours">
+                                        <li class="uv-num-item uv-num-item-hours">13</li>
+                                        <li class="uv-num-item uv-num-item-hours">12</li>
+                                        <li class="uv-num-item uv-num-item-hours">11</li>
+                                        <li class="uv-num-item uv-num-item-hours">10</li>
+                                        <li class="uv-num-item uv-num-item-hours">9</li>
+                                        <li class="uv-num-item uv-num-item-hours">8</li>
+                                        <li class="uv-num-item uv-num-item-hours">7</li>
+                                        <li class="uv-num-item uv-num-item-hours">6</li>
+                                        <li class="uv-num-item uv-num-item-hours">5</li>
+                                        <li class="uv-num-item uv-num-item-hours">4</li>
+                                        <li class="uv-num-item uv-num-item-hours">3</li>
+                                        <li class="uv-num-item uv-num-item-hours">2</li>
+                                        <li class="uv-num-item uv-num-item-hours">1</li>
+                                        <li class="uv-num-item uv-num-item-hours">0</li>
+                                    </ul>
+                                    <ul class="uv-line-list uv-line-list-hours">
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">00:00</p><p class="uv-number-change-text">0</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">01:00</p><p class="uv-number-change-text">1</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">02:00</p><p class="uv-number-change-text">2</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">03:00</p><p class="uv-number-change-text">3</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">04:00</p><p class="uv-number-change-text">4</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">05:00</p><p class="uv-number-change-text">5</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">06:00</p><p class="uv-number-change-text">6</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">07:00</p><p class="uv-number-change-text">7</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">08:00</p><p class="uv-number-change-text">8</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">09:00</p><p class="uv-number-change-text">9</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">10:00</p><p class="uv-number-change-text">10</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">11:00</p><p class="uv-number-change-text">11</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">12:00</p><p class="uv-number-change-text">12</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">13:00</p><p class="uv-number-change-text">13</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">14:00</p><p class="uv-number-change-text">14</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">15:00</p><p class="uv-number-change-text">15</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">16:00</p><p class="uv-number-change-text">16</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">17:00</p><p class="uv-number-change-text">17</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">18:00</p><p class="uv-number-change-text">18</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">19:00</p><p class="uv-number-change-text">19</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">20:00</p><p class="uv-number-change-text">20</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">21:00</p><p class="uv-number-change-text">21</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">22:00</p><p class="uv-number-change-text">22</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                        <li class="uv-line-item uv-line-item-hours"><p class="uv-number-text">23:00</p><p class="uv-number-change-text">23</p> <p class="uv-graph-text uv-graph-text-hours"></p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="double-graph">
+                        <div class="container">
+                            <h2 class="graph-title">Прогноз погоды на 15 дней</h2>
+                            <div class="double-graph-container">
+                                <ul class="graph-minus-list weather-minus-list">
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                    <li class="graph-minus-item weather-minus-item"><span class="graph-minus-deg weather-minus-deg"></span></li>
+                                </ul>
+                                <ul class="double-graph-list weather-graph-list">
+                                    <li class="double-graph-item weather-graph-item">1. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">2. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">3. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">4. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">5. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">6. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">7. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">8. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">9. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">10. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">11. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">12. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">13. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">14. <span class="predict-data weather-predict-data"></span></li>
+                                    <li class="double-graph-item weather-graph-item">15. <span class="predict-data weather-predict-data"></span></li>
+                                </ul>
+                                <ul class="graph-plus-list weather-plus-list">
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                    <li class="graph-plus-item weather-plus-item"><span class="graph-plus-deg weather-plus-deg"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="uv-graph humidity-day">
+                        <div class="container">
+                            <div class="uv-graph-container">
+                                <h2 class="uv-title">Прогноз влажности на 15 дней</h2>
+                                <div class="uv-container">
+                                    <ul class="uv-num-list humidity-num-list-day">
+                                        <li class="uv-num-item humidity-num-item-day">100%</li>
+                                        <li class="uv-num-item humidity-num-item-day">90%</li>
+                                        <li class="uv-num-item humidity-num-item-day">80%</li>
+                                        <li class="uv-num-item humidity-num-item-day">70%</li>
+                                        <li class="uv-num-item humidity-num-item-day">60%</li>
+                                        <li class="uv-num-item humidity-num-item-day">50%</li>
+                                        <li class="uv-num-item humidity-num-item-day">40%</li>
+                                        <li class="uv-num-item humidity-num-item-day">30%</li>
+                                        <li class="uv-num-item humidity-num-item-day">20%</li>
+                                        <li class="uv-num-item humidity-num-item-day">10%</li>
+                                        <li class="uv-num-item humidity-num-item-day">0%</li>
+                                    </ul>
+                                    <ul class="uv-line-list humidity-line-list-last">
+                                        <li class="uv-line-item">1. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">2. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">3. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">4. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">5. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">6. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">7. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">8. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">9. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">10. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">11. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">12. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">13. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">14. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                        <li class="uv-line-item">15. <p class="uv-graph-text humidity-graph-text-day"></p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="uv-graph">
+                        <div class="container">
+                            <div class="uv-graph-container">
+                                <h2 class="uv-title">Прогноз УФ-индекса на 15 дней</h2>
+                                <div class="uv-container">
+                                    <ul class="uv-num-list uv-num-list-day">
+                                        <li class="uv-num-item uv-num-item-day">13</li>
+                                        <li class="uv-num-item uv-num-item-day">12</li>
+                                        <li class="uv-num-item uv-num-item-day">11</li>
+                                        <li class="uv-num-item uv-num-item-day">10</li>
+                                        <li class="uv-num-item uv-num-item-day">9</li>
+                                        <li class="uv-num-item uv-num-item-day">8</li>
+                                        <li class="uv-num-item uv-num-item-day">7</li>
+                                        <li class="uv-num-item uv-num-item-day">6</li>
+                                        <li class="uv-num-item uv-num-item-day">5</li>
+                                        <li class="uv-num-item uv-num-item-day">4</li>
+                                        <li class="uv-num-item uv-num-item-day">3</li>
+                                        <li class="uv-num-item uv-num-item-day">2</li>
+                                        <li class="uv-num-item uv-num-item-day">1</li>
+                                        <li class="uv-num-item uv-num-item-day">0</li>
+                                    </ul>
+                                    <ul class="uv-line-list uv-line-list-last">
+                                        <li class="uv-line-item">1. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">2. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">3. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">4. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">5. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">6. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">7. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">8. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">9. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">10. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">11. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">12. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">13. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">14. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                        <li class="uv-line-item">15. <p class="uv-graph-text uv-graph-text-day"></p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="grid-geo">
+                    <section class="geo">
+                        <div class="container">
+                            <p class="premium-title geo-premium-title">Достопримечательности</p>
+                            <div class="geo-container">
+                                <div class="geo-place">
+                
+                                </div>
+                            </div>
+                            <div class="circle">
+                                
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="bottom">
+                <p class="footer-text">&copy; 2024 WF&A</p>
+            </div>
+        </footer>
+    </div>
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});</script>
+    <script src="fetch-geo.js"></script>
+    <script src="burger.js"></script>
+</body>
+
+</html>

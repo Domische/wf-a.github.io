@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WF&A</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="weather.css">
+    <meta name="description" content="Прогноз погоды в Москве и регионах сегодня, а также на ближайшие 15 дней. Прогноз скорости ветра, уф излучения, солнечной активности и времени восхода и захода">
+    <meta name="keywords" content="путешествие, туризм, отдых, отпуск, достопримечательность, погода, температура воздуха, уф излучение">
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+    <!-- <script src="https://mapgl.2gis.com/api/js/v1"></script> -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=323b2394-63db-47b1-9562-6e2b034571fa&lang=ru_RU" type="text/javascript">
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="top">
+                <a href="index.html" class="logo">WF&A</a>
+                <img src="images/burger-menu.png" alt="" class="menu-burger">
+                <ul class="menu-list">
+                    <li class="menu-list-item"><a href="index.html" class="menu-list-item-link">Главная</a></li>
+                    <li class="menu-list-item"><a href="weather.html" class="menu-list-item-link">Прогноз погоды</a></li>
+                    <li class="menu-list-item"><a href="geo.html" class="menu-list-item-link">Достопримечательности</a></li>
+                    <li class="menu-list-item"><a href="premium-index.html" class="menu-list-item-link pv">Premium version</a></li>
+                </ul>
+            </div>
+        </header>
+        <main class="main">
+            <section class="weather">
+                <div class="container">
+                    <div class="weather-container">
+                        <div class="search">
+                            <input class="input" type="text" placeholder="Поиск">
+                            <img src="images/search-512.webp" alt="" class="search-img">
+                        </div>
+                        <div class="main-prec"><img src="images/stock-img.png" alt="" class="prec"></div>
+                        <ul class="weather-list">
+                            <li class="main-location">Локация: <span class="location"></span></li>
+                            <li class="main-map">Карта: <div class="circle"></div><div class="map"></div></li>
+                            <li class="main-temp">Температура: <span class="temp"></span></li>
+                            <li class="main-wind">Ветер: <span class="wind"></span></li>
+                            <li class="main-suntop">Восход: <span class="suntop"></span></li>
+                            <li class="main-sunbottom">Заход: <span class="sunbottom"></span></li>
+                            <li class="main-sunbottom">Влажность: <span class="humidity"></span></li>
+                            <li class="main-sunbottom">УФ-индекс: <span class="uv-index"></span></li>
+                            <li class="main-desc">Прогноз: <span class="desc"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="double-graph">
+                <div class="container">
+                    <h2 class="graph-title">Прогноз погоды на 15 дней</h2>
+                    <div class="double-graph-container">
+                        <ul class="graph-minus-list">
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                            <li class="graph-minus-item"><span class="graph-minus-deg"></span></li>
+                        </ul>
+                        <ul class="double-graph-list">
+                            <li class="double-graph-item">1. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">2. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">3. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">4. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">5. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">6. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">7. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">8. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">9. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">10. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">11. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">12. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">13. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">14. <span class="predict-data"></span></li>
+                            <li class="double-graph-item">15. <span class="predict-data"></span></li>
+                        </ul>
+                        <ul class="graph-plus-list">
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                            <li class="graph-plus-item"><span class="graph-plus-deg"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="uv-graph">
+                <div class="container">
+                    <div class="uv-graph-container">
+                        <h2 class="uv-title">Прогноз УФ-индекса на 15 дней</h2>
+                        <div class="uv-container">
+                            <ul class="uv-num-list">
+                                <li class="uv-num-item">13</li>
+                                <li class="uv-num-item">12</li>
+                                <li class="uv-num-item">11</li>
+                                <li class="uv-num-item">10</li>
+                                <li class="uv-num-item">9</li>
+                                <li class="uv-num-item">8</li>
+                                <li class="uv-num-item">7</li>
+                                <li class="uv-num-item">6</li>
+                                <li class="uv-num-item">5</li>
+                                <li class="uv-num-item">4</li>
+                                <li class="uv-num-item">3</li>
+                                <li class="uv-num-item">2</li>
+                                <li class="uv-num-item">1</li>
+                                <li class="uv-num-item">0</li>
+                            </ul>
+                            <ul class="uv-line-list">
+                                <li class="uv-line-item">1. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">2. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">3. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">4. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">5. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">6. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">7. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">8. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">9. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">10. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">11. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">12. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">13. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">14. <p class="uv-graph-text"></p></li>
+                                <li class="uv-line-item">15. <p class="uv-graph-text"></p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+        </main>
+        <footer class="footer">
+            <div class="bottom">
+                <p class="footer-text">&copy; 2024 WF&A</p>
+            </div>
+        </footer>
+    </div>
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});</script>
+    <script src="fetch.js"></script>
+    <script src="burger.js"></script>
+    <script src="open-weather.js"></script>
+    <!-- <script src="placename.js"></script> -->
+</body>
+
+</html>

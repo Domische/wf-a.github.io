@@ -1,0 +1,256 @@
+body {
+    background-image: url('./images/beach.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.weather {
+    padding-bottom: 60px;
+}
+
+.weather-container {
+    margin: 0 auto;
+    max-width: 800px;
+    /* background-color:  rgba(34, 0, 255, 0.473); */
+    height: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.439);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+.search {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    padding: 5px;
+}
+
+.input {
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    font-size: 25px;
+
+}
+
+.search-img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.weather-list li {
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.weather-list span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.prec {
+    width: 120px;
+    height:120px;
+}
+
+.main-prec {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+/* переделать */
+
+
+
+/* переделать */
+
+.predict-container {
+    padding-top: 50px;
+}
+
+.predict-item {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.double-graph {
+    padding-block: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.439);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+.graph-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.double-graph-container {
+    max-width: 800px;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.double-graph-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+.double-graph-list {
+    /* text-align: center; */
+    display: flex;
+    height: 100%;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.graph-minus-list {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: absolute;
+    right: 50%;
+    transform: rotate(180deg);
+}
+
+.graph-minus-list::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 1px;
+}
+
+.graph-plus-list {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transform: rotate(-180deg) scaleX(-1);
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.graph-minus-item {
+    width: 0;
+    height: 5px;
+    background-color: blueviolet;
+}
+
+.graph-plus-item {
+    width: 0;
+    height: 5px;
+    background-color: blueviolet;
+}
+
+.graph-plus-deg {
+    position: absolute;
+    padding-left: 5px;
+}
+
+.graph-minus-deg {
+    position: absolute;
+    padding-right: 5px;
+}
+
+.uv-graph {
+    margin-top: 60px;
+}
+
+.uv-graph-container {
+    overflow: hidden;
+    max-width: 800px;
+    height: auto;
+    min-height: 400px;
+    position: relative;
+    margin: 0 auto;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.439);
+}
+
+.uv-num-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 10px;
+    height: 100%;
+}
+
+.uv-title {
+    text-align: center;
+    padding-block: 20px;
+}
+
+.uv-line-list {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 10px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.uv-line-list::after {
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 1px;
+    background-color: black;
+    bottom: 33px;
+}
+
+.uv-graph-text {
+    position: absolute;
+    height: 0px;
+    width: 5px;
+    bottom: 34px;
+    background-color: blueviolet;
+}
+
+.map {
+    margin-top: 10px;
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    background-image: url('./images/maps.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media(max-width: 600px) {
+    .weather-list li {
+        font-size: 16px;
+    }
+
+    .weather-list li span {
+        font-size: 16px;
+    }
+}
